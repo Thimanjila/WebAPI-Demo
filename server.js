@@ -1,5 +1,6 @@
 
 const locationRoutes = require("./routes/locationRoutes");
+const authRoutes = require("./routes/authRoutes");
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
@@ -37,6 +38,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 // routes
 app.use("/api/tuktuks", tukTukRoutes);
 app.use("/api/location", locationRoutes);
+app.use("/api/auth", authRoutes);
 
 // test route
 app.get("/", (req, res) => {
